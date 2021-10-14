@@ -2,7 +2,7 @@ using SMM, DataFrames, CSV, HTTP, Random, LinearAlgebra, Statistics, Optim, Data
 
 function PS7()
 	#question 1
-	url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2020/master/ProblemSets/PS1-julia-intro/nlsw88.csv"
+	url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-1/master/ProblemSets/PS1-julia-intro/nlsw88.csv"
 	df = CSV.read(HTTP.get(url).body, DataFrames)
 	X = [ones(size(df,1),1) df.age df.race.==1 df.collgrad.==1]
 	y = log.(df.wage);
